@@ -1,4 +1,3 @@
-# coding: utf-8
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 
@@ -22,7 +21,7 @@ class User(db.Model):
 
     @property
     def password(self):
-        raise AttributeError('password is not a readable attribute 密码不可读')
+        raise AttributeError('password is not a readable attribute')
 
     @password.setter
     def password(self, password):

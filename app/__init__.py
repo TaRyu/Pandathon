@@ -1,5 +1,5 @@
 # coding: utf-8
-from flask import Flask, render_template
+from flask import Flask
 from flask.ext.bootstrap import Bootstrap
 from flask.ext.mail import Mail
 from flask.ext.moment import Moment
@@ -23,7 +23,7 @@ def create_app(config_name):
     db.init_app(app)
 
     # 下面注册路由表
-    from main import main as main_blueprint
+    from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
     return app

@@ -5,5 +5,5 @@ from wtforms.validators import Required
 
 
 class NameForm(Form):
-    name = StringField('你的名字是', validators=[Required()])
+    name = StringField(u'你的姓名', validators=[Required()])
     submit = SubmitField('Submit')

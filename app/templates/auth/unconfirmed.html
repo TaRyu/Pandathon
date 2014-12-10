@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Pandathon—用户未激活{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>用户{{ current_user.username }}未激活</h1>
+</div>
+{% endblock %}

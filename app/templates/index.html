@@ -11,6 +11,14 @@
     {{ wtf.quick_form(form) }}
     {% endif %}
 </div>
+<div class="post-tabs">
+    <ul class="nav nav-tabs">
+        <li{% if not show_followed %} class="active"{% endif %}><a href="{{ url_for('.show_all') }}">显示全部</a></li>
+        {% if current_user.is_authenticated() %}
+        <li{% if show_followed %} class="active" {% endif %}><a href="{{ url_for('.show_followed') }}">仅显示关注</a></li>
+        {% endif %}
+    </ul>
+</div>
 {% include '_posts.html' %}
 {% if pagination %}
 <div class="pagination">

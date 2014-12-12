@@ -13,6 +13,7 @@ class Config:
     FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
     FLASKY_MAIL_SENDER = 'Flasky Admin <flasky@example.com>'
     PANDATHON_ADMIN = os.environ.get('PANDATHON_ADMIN')
+    PANDATHON_POSTS_PER_PAGE = 10
 
     @staticmethod
     def init_app(app):

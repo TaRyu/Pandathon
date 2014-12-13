@@ -81,6 +81,16 @@ def post(id):
                            comments=comments, pagination=pagination)
 
 
+@main.route('/delete_comment/<int:id>')
+@login_required
+@permission_required(Permission.MODERATE_COMMENTS)
+def delete_comment(id):
+    comment = Comment.query.get_or_404(id)
+    db.session.delete(comment)
+    flash(u'评论已删除')
+    return redirect(url_for('.post', id=comment.post_id))
+
+
 @main.route('/edit-profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
